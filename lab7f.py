@@ -1,18 +1,30 @@
 #!/usr/bin/env python3
-# Student ID: tloo1
+# Student ID: [seneca_id]
 
 class Time:
     """Simple object type for time of the day.
        data attributes: hour, minute, second
        function attributes: __init__, __str__, __repr__,
                             time_to_sec, format_time,
-                            change_time, sum_times, valid_time
+                            change_time, sum_times, valid_time, __add__
     """
     def __init__(self, hour=12, minute=0, second=0):
         """Constructor for time object"""
         self.hour = hour
         self.minute = minute
         self.second = second
+
+    def __str__(self):
+        """Return a formatted string for print() calls"""
+        return f'{self.hour:02d}:{self.minute:02d}:{self.second:02d}'
+
+    def __repr__(self):
+        """Return a formatted string for interactive shell display"""
+        return f'{self.hour:02d}.{self.minute:02d}.{self.second:02d}'
+
+    def __add__(self, t2):
+        """Overload + operator to add two Time objects"""
+        return self.sum_times(t2)
 
     def format_time(self):
         """Return time object as a formatted string"""

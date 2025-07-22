@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-# Student ID: tloo1
+# Student ID: [seneca_id]
 
 class Time:
     """Simple object type for time of the day.
@@ -13,6 +13,14 @@ class Time:
         self.hour = hour
         self.minute = minute
         self.second = second
+
+    def __str__(self):
+        """Return a formatted string for print() calls"""
+        return f'{self.hour:02d}:{self.minute:02d}:{self.second:02d}'
+
+    def __repr__(self):
+        """Return a formatted string for interactive shell display"""
+        return f'{self.hour:02d}.{self.minute:02d}.{self.second:02d}'
 
     def format_time(self):
         """Return time object as a formatted string"""
